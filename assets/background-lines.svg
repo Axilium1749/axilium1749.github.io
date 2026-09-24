@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMin slice" fill="none" aria-hidden="true">
+  <g stroke="#cdd2cb" stroke-width="1" opacity=".46">
+    <path d="M-210 90 510 500q42 24 42 72v245q0 35-31 53l-240 139"/>
+    <path d="M700-110v298q0 40-35 60L-170 730"/>
+    <path d="M1210-110v338q0 40-35 60L180 860"/>
+    <path d="m1710 116-340 196q-35 20-35 60v202q0 40 35 60l350 202"/>
+    <path d="M-220 854 795 270q40-23 80 0l945 545"/>
+  </g>
+</svg>
