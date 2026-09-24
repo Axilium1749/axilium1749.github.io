@@ -1,0 +1,144 @@
+/* Shared visual refinements for the chef and administrator dashboards. */
+* {
+    font-family: "Manrope", Arial, sans-serif;
+}
+
+body {
+    color: #203047;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.lefter {
+    box-shadow: 8px 0 28px rgba(21, 100, 168, 0.08);
+}
+
+.admin_main_header {
+    box-shadow: 0 3px 14px rgba(29, 77, 122, 0.05);
+    position: relative;
+    z-index: 1;
+}
+
+.admin_nav_button,
+.admin_nav_slider {
+    border-radius: 14px;
+}
+
+.main_main_panel {
+    background: #f7fafe;
+}
+
+.admin_stat_card {
+    border: 1px solid #b7dcfb;
+    border-radius: 18px;
+    box-shadow: 0 10px 22px rgba(32, 113, 181, 0.17);
+}
+
+.graph_holder,
+.main_orders_panel,
+.main_main_notifications_panel,
+.chef_orders_panel,
+.chef_stocks_panel {
+    border: 1px solid #b9e1ff;
+    border-radius: 20px;
+    box-shadow: 0 12px 28px rgba(32, 103, 162, 0.15);
+}
+
+.graph_canvas,
+.orders_bg,
+.day_menu_panel,
+.chef_orders_table_padder,
+.orders_table_card {
+    border-radius: 17px;
+    box-shadow: 0 5px 15px rgba(31, 86, 133, 0.10);
+}
+
+.graph_holder p,
+.main_orders_panel > p,
+.main_main_notifications_panel > p {
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+}
+
+.orders_table th,
+.orders_table td,
+.chef_orders_table th,
+.chef_orders_table td,
+.chef_stocks_table th,
+.chef_stocks_table td {
+    font-size: clamp(0.875rem, 0.95vw, 1rem);
+    line-height: 1.45;
+}
+
+.day_menu_panel {
+    padding: 7px;
+}
+
+.day_menu_table {
+    padding: 8px;
+    border: 1px solid #e4eef8;
+    border-radius: 16px;
+    background: #f8fbff;
+}
+
+.day_menu_table_body {
+    gap: 8px;
+}
+
+.day_menu_row {
+    grid-template-columns: minmax(90px, 2fr) repeat(3, minmax(74px, 1fr)) repeat(3, minmax(56px, 0.9fr));
+    column-gap: 6px;
+    padding: 9px 11px;
+    border: 1px solid #e0edf9;
+    border-radius: 13px;
+    background: #fff;
+    box-shadow: 0 5px 14px rgba(36, 100, 156, 0.13);
+}
+
+.day_menu_row::after {
+    display: none;
+}
+
+.day_menu_row--head {
+    border-color: #cfe5f9;
+    background: #e9f5ff;
+    box-shadow: none;
+}
+
+.day_menu_row > div {
+    font-size: clamp(0.875rem, 0.95vw, 0.95rem);
+    line-height: 1.4;
+    letter-spacing: 0;
+}
+
+.day_menu_row--head > div {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: #344b63;
+}
+
+.day_menu_actions_heading {
+    grid-column: 5 / -1;
+    text-align: center;
+}
+
+.day_menu_tab {
+    border: 1px solid #e2eaf4;
+    border-radius: 13px;
+    box-shadow: 0 4px 11px rgba(29, 78, 130, 0.08);
+}
+
+.day_menu_tab_input:checked + .day_menu_tab {
+    border-color: #2b9bff;
+    box-shadow: 0 7px 15px rgba(43, 155, 255, 0.22);
+}
+
+.day_menu_btn {
+    border-radius: 10px;
+    font-size: 0.8125rem;
+    box-shadow: 0 3px 8px rgba(25, 108, 187, 0.14);
+}
+
+.day_menu_btn--danger {
+    box-shadow: 0 3px 8px rgba(207, 61, 70, 0.16);
+}
