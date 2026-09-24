@@ -789,7 +789,7 @@ body {
     flex: 1;
     min-height: 0;
     height: 100%;
-    
+
     overflow: auto;
     scrollbar-width: thin;
     scrollbar-color: rgba(31, 35, 40, 0.35) transparent;

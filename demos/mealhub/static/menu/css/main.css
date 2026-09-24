@@ -316,9 +316,9 @@ input[type="checkbox"] {
   align-items: center;
   width: 100%;
 
-  height: clamp(2.4rem, 12vh, 4rem); 
+  height: clamp(2.4rem, 12vh, 4rem);
   font-size: clamp(1.15rem, 5vh, 1.5rem);
-  
+
   background-color: var(--main-color);
   flex: 0 0 auto;
 }
@@ -379,7 +379,7 @@ input[type="checkbox"] {
 
 
 .menu_footer {
-  height: clamp(2.4rem, 12vh, 4rem); 
+  height: clamp(2.4rem, 12vh, 4rem);
   position: relative;
   display: flex;
   flex-direction: row;
@@ -412,7 +412,7 @@ input[type="checkbox"] {
 .footer_highlight {
   position: absolute;
   bottom: 10;
-  height: clamp(1.3rem, 7.7vh, 2.8rem); 
+  height: clamp(1.3rem, 7.7vh, 2.8rem);
   background-color: var(--main-color);
   border-radius: clamp(0.5rem, 3vh, 2.5rem);
   transition: left 0.3s ease, width 0.3s ease;
@@ -600,7 +600,7 @@ input[type="checkbox"] {
 .add_money_img {
   width: 0.6em;
   margin-right: 0.4em;
-} 
+}
 
 .history {
   width: 90%;
@@ -1209,7 +1209,7 @@ input[type="checkbox"] {
 .rating label {
   font-size: 2.5rem;
   color: var(--secondary-color);
-  cursor: pointer;  
+  cursor: pointer;
   transition: color 0.2s;
 }
 
