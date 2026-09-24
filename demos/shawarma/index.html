@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f35a24" />
+    <title>ШАВЕРМА — огонь внутри</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="demo-notice" role="note"><strong>Демо-проект</strong><span>Бренд, адреса и цифры вымышлены. Форма ничего не отправляет.</span><a href="../../" aria-label="Вернуться в портфолио">Портфолио ↗</a></div>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="header">
+      <a class="brand" href="#top" aria-label="ШАВЕРМА — на главную">Ш<span>А</span>ВЕРМА<sup>™</sup></a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#menu">Меню</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a class="header-link" href="#contacts">Мы рядом <span>↘</span></a>
+      <button class="menu-toggle" aria-label="Открыть меню">☰</button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> городская еда с характером</p>
+          <h1>Огонь<br />внутри <i>каждой</i><br />шавермы</h1>
+          <p class="lead">Сочное мясо на живом огне, хрустящие овощи и наши соусы. Собираем честно и щедро — как для своих.</p>
+          <a class="button button-dark" href="#menu">Смотреть меню <b>↓</b></a>
+          <div class="hero-note"><span class="star">✳</span><span>Никакой заморозки.<br />Готовим каждый день.</span></div>
+        </div>
+        <div class="hero-visual">
+          <div class="round-type">сочно · горячо · щедро · сочно · горячо · щедро ·</div>
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <div class="sauce sauce-one"></div>
+          <div class="sauce sauce-two"></div>
+          <img class="shawarma-photo" src="https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?auto=format&fit=crop&w=1050&q=90" alt="Аппетитная шаверма с овощами" />
+          <div class="hot-sticker">HOT<br /><small>●</small></div>
+          <p class="made-label">Сделано<br />с любовью<br />и перцем</p>
+        </div>
+      </section>
+
+      <section class="ticker" aria-label="Наши принципы">
+        <div>СОЧНОЕ МЯСО <b>✳</b> СВЕЖИЕ ОВОЩИ <b>✳</b> МНОГО НАЧИНКИ <b>✳</b> ЯРКИЙ ВКУС <b>✳</b> СОЧНОЕ МЯСО <b>✳</b></div>
+      </section>
+
+      <section class="menu-section" id="menu">
+        <div class="section-top">
+          <div><p class="eyebrow dark"><span></span> выбирай настроение</p><h2>В меню —<br /><em>только хиты</em></h2></div>
+          <p class="section-copy">Классика, которая никогда не надоедает. Выбирай размер, добавляй остроты и наслаждайся.</p>
+        </div>
+        <div class="product-grid">
+          <article class="product-card card-yellow">
+            <div class="card-number">01</div><span class="tag">хит</span>
+            <img src="https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=700&q=85" alt="Классическая шаверма" />
+            <div class="product-info"><div><h3>Классика</h3><p>Курица · овощи · фирменный соус</p></div><strong>от 260 ₽</strong></div>
+            <button class="order-product" type="button" data-product="Классика">Заказать самовывоз →</button>
+          </article>
+          <article class="product-card card-pink">
+            <div class="card-number">02</div><span class="tag dark-tag">остро</span>
+            <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=700&q=85" alt="Острая шаверма" />
+            <div class="product-info"><div><h3>Поострее</h3><p>Курица · халапеньо · чили-соус</p></div><strong>от 280 ₽</strong></div>
+            <button class="order-product" type="button" data-product="Поострее">Заказать самовывоз →</button>
+          </article>
+          <article class="product-card card-blue">
+            <div class="card-number">03</div><span class="tag dark-tag">new</span>
+            <img src="https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?auto=format&fit=crop&w=700&q=85" alt="Шаверма с сыром" />
+            <div class="product-info"><div><h3>Сырный взрыв</h3><p>Курица · сырный соус · моцарелла</p></div><strong>от 310 ₽</strong></div>
+            <button class="order-product" type="button" data-product="Сырный взрыв">Заказать самовывоз →</button>
+          </article>
+        </div>
+        <a class="menu-link" href="#contacts">Всё меню — в наших точках <span>↗</span></a>
+      </section>
+
+      <section class="pickup" id="order">
+        <div class="pickup-copy">
+          <p class="eyebrow"><span></span> без очереди</p>
+          <h2>Забери<br /><i>горячей.</i></h2>
+          <p>Оставьте заявку — приготовим к удобному времени. Оплата на кассе при получении.</p>
+        </div>
+        <form class="order-form" id="order-form">
+          <div class="form-row"><label>Ваше имя<input name="name" autocomplete="name" required placeholder="Как к вам обращаться" /></label><label>Телефон<input name="phone" autocomplete="tel" inputmode="tel" required placeholder="+7 999 123-45-67" /></label></div>
+          <div class="form-row"><label>Что готовим<select name="product" id="order-product" required><option value="Классика">Классика — от 260 ₽</option><option value="Поострее">Поострее — от 280 ₽</option><option value="Сырный взрыв">Сырный взрыв — от 310 ₽</option></select></label><label>Количество<select name="quantity" required><option value="1">1 шт.</option><option value="2">2 шт.</option><option value="3">3 шт.</option><option value="4">4 шт.</option></select></label></div>
+          <div class="form-row"><label>Точка самовывоза<select name="location" required><option value="Литейный, 32">Литейный, 32</option><option value="Большая Конюшенная, 14">Большая Конюшенная, 14</option></select></label><label>Когда заберёте<select name="pickupTime" required><option value="Как можно скорее">Как можно скорее</option><option value="Через 15 минут">Через 15 минут</option><option value="Через 30 минут">Через 30 минут</option><option value="Через 45 минут">Через 45 минут</option></select></label></div>
+          <label>Комментарий <textarea name="comment" rows="3" placeholder="Например: без лука, добавить остроты"></textarea></label>
+          <button class="button button-dark submit-order" type="submit">Оформить самовывоз <b>→</b></button>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="story" id="about">
+        <div class="story-photo"><img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1000&q=85" alt="Приготовление еды на кухне" /><div class="stamp">НАСТОЯЩИЙ<br />ВКУС<br /><b>●</b></div></div>
+        <div class="story-copy">
+          <p class="eyebrow"><span></span> наше простое правило</p>
+          <h2>Еда должна<br />быть <i>честной.</i></h2>
+          <p>Поэтому мы не экономим на ингредиентах, не прячем вкус за кучей специй и не готовим впрок. Просто делаем ту самую шаверму, за которой хочется вернуться.</p>
+          <div class="facts"><div><b>2018</b><span>открыли первую<br />точку</span></div><div><b>6</b><span>точек в городе<br />и ещё растём</span></div><div><b>100%</b><span>вкусно,<br />мы проверяли</span></div></div>
+        </div>
+      </section>
+
+      <section class="visit" id="contacts">
+        <p class="eyebrow dark"><span></span> ждём в гости</p>
+        <h2>Ближе, чем<br /><em>кажется</em></h2>
+        <div class="locations">
+          <article><span>01</span><h3>Литейный, 32</h3><p>ежедневно 10:00—23:00</p><span class="demo-address">Адрес для примера</span></article>
+          <article><span>02</span><h3>Большая Конюшенная, 14</h3><p>ежедневно 10:00—23:00</p><span class="demo-address">Адрес для примера</span></article>
+        </div>
+      </section>
+    </main>
+
+    <footer><a class="brand" href="#top">Ш<span>А</span>ВЕРМА<sup>™</sup></a><p>Вкусно. Просто. По-настоящему.</p><a href="../../">Демо от Axilium ↗</a></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
