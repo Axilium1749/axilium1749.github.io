@@ -50,8 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
     listEl.innerHTML = '';
     items.forEach(item => {
       const li = document.createElement(tagName);
-      li.textContent = item;
-      if (highlightSet && highlightSet.has(item)) {
+      const label = window.portfolioTranslate?.(item) || item;
+      li.textContent = label;
+      if (highlightSet && (highlightSet.has(item) || highlightSet.has(label))) {
         li.classList.add('allergen-hit');
       }
       listEl.appendChild(li);

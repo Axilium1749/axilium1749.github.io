@@ -10,12 +10,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css?v=cards-3" />
+    <script src="i18n.js"></script>
   </head>
   <body>
     <div class="page">
       <header class="header">
         <a class="brand" href="/" aria-label="Axilium — главная">axilium<span>.</span></a>
-        <a class="contact-link" href="https://t.me/achomp" target="_blank" rel="noopener noreferrer">Telegram <span aria-hidden="true">↗</span></a>
+        <div class="header-actions">
+          <label class="language-picker" for="language-select">
+            <span class="visually-hidden">Язык / Language</span>
+            <select id="language-select" aria-label="Язык / Language">
+              <option value="ru">RU</option>
+              <option value="en">EN</option>
+            </select>
+          </label>
+          <a class="contact-link" href="https://t.me/achomp" target="_blank" rel="noopener noreferrer">Telegram <span aria-hidden="true">↗</span></a>
+        </div>
       </header>
 
       <main>

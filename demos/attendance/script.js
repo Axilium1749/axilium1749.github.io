@@ -144,8 +144,9 @@
     if (!group) return;
     renderSummary();
     childrenList.replaceChildren();
-    const query = search.value.trim().toLocaleLowerCase("ru");
-    const visible = group.children.filter(child => child.name.toLocaleLowerCase("ru").includes(query));
+    const query = search.value.trim().toLocaleLowerCase(document.documentElement.lang);
+    const visible = group.children.filter(child =>
+      (window.portfolioTranslate?.(child.name) || child.name).toLocaleLowerCase(document.documentElement.lang).includes(query));
     if (!visible.length) {
       const empty = document.createElement("p");
       empty.className = "demo-empty";

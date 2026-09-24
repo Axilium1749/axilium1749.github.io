@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Чт': 4,
         'Пт': 5,
     };
+    const dayKeys = Object.keys(dayMap);
 
     function updateAdminMenuDate(dayOfWeekText) {
 
@@ -53,14 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
-        const formattedDate = currentDate.toLocaleDateString('ru-RU', options);
+        const formattedDate = currentDate.toLocaleDateString(document.documentElement.lang === 'en' ? 'en-GB' : 'ru-RU', options);
 
-        adminMenuDateDiv.textContent = `${dayToDisplay}, ${formattedDate}`;
+        adminMenuDateDiv.textContent = `${window.portfolioTranslate?.(dayToDisplay) || dayToDisplay}, ${formattedDate}`;
     }
 
-    dayButtons.forEach(button => {
+    dayButtons.forEach((button, index) => {
         button.addEventListener('click', () => {
-            const dayText = button.textContent;
+            const dayText = dayKeys[index];
             updateAdminMenuDate(dayText);
 
             dayButtons.forEach(btn => btn.classList.remove('active'));
@@ -69,22 +70,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const today = new Date();
-    const todayDayOfWeek = today.toLocaleDateString('ru-RU', { weekday: 'long' });
-    const todayFormattedDate = today.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    const locale = document.documentElement.lang === 'en' ? 'en-GB' : 'ru-RU';
+    const todayDayOfWeek = today.toLocaleDateString(locale, { weekday: 'long' });
+    const todayFormattedDate = today.toLocaleDateString(locale, { day: '2-digit', month: '2-digit', year: 'numeric' });
     adminMenuDateDiv.textContent = `${todayDayOfWeek}, ${todayFormattedDate}`;
 
-    const currentDayAbbr = today.toLocaleDateString('ru-RU', { weekday: 'short' });
-    dayButtons.forEach(button => {
-        if (button.textContent === currentDayAbbr) {
+    const currentDayKey = dayKeys[(today.getDay() + 6) % 7];
+    dayButtons.forEach((button, index) => {
+        if (dayKeys[index] === currentDayKey) {
             button.classList.add('active');
-            updateAdminMenuDate(button.textContent);
+            updateAdminMenuDate(currentDayKey);
         }
     });
 
     if (dayInput && !dayInput.value) {
         const first = dayButtons[0];
         if (first) {
-            updateAdminMenuDate(first.textContent);
+            updateAdminMenuDate(dayKeys[0]);
         }
     }
 });

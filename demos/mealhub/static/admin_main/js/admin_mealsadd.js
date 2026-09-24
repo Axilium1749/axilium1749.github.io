@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateDishNumbers();
                 dishCounter = allBlocks.length - 1;
             } else {
-                alert('Должно остаться хотя бы одно блюдо!');
+                alert(window.portfolioTranslate?.('Должно остаться хотя бы одно блюдо!') || 'Должно остаться хотя бы одно блюдо!');
             }
         };
 
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 if (hasEmpty) {
                     e.preventDefault();
-                    alert('Пожалуйста, заполните названия всех блюд!');
+                    alert(window.portfolioTranslate?.('Пожалуйста, заполните названия всех блюд!') || 'Пожалуйста, заполните названия всех блюд!');
                 }
             });
         };
