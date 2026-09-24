@@ -120,6 +120,11 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     if (language === 'en') {
+      document.querySelectorAll('img[data-preview-en]').forEach(image => {
+        image.src = image.dataset.previewEn;
+      });
+    }
+    if (language === 'en') {
       translateNode(document.head);
       translateNode(document.body);
       new MutationObserver(records => {
