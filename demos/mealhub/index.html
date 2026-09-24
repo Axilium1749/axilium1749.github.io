@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f6f4" />
+    <meta name="description" content="Статическое демо интерфейсов MealHub: меню, панель повара и администратора." />
+    <title>MealHub — демо интерфейсов</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <a class="brand" href="#top">mealhub<span>.</span></a>
+        <div class="topbar-links">
+          <a href="https://github.com/Axilium1749/mealhub-demo" target="_blank" rel="noopener noreferrer">Код ↗</a>
+          <a href="../../">Портфолио ↗</a>
+        </div>
+      </header>
+
+      <main id="top">
+        <div class="intro">
+          <p class="eyebrow">Статическое демо</p>
+          <h1>Три роли. Одна система.</h1>
+          <p class="intro-copy">Меню и заказы для пользователей, выдача и остатки для повара, отчёты и управление для администратора.</p>
+          <p class="disclaimer">Данные вымышлены. Это макет интерфейсов: действия не сохраняются и сервер не подключён.</p>
+          <nav class="role-nav" aria-label="Экраны демо">
+            <a href="#menu">Меню пользователя <span>↘</span></a>
+            <a href="#chef">Панель повара <span>↘</span></a>
+            <a href="#admin">Панель администратора <span>↘</span></a>
+          </nav>
+        </div>
+
+        <section class="demo-section" id="menu" aria-labelledby="menu-title">
+          <div class="section-heading"><span>01 / 03</span><h2 id="menu-title">Меню пользователя</h2><p>Блюда на день, состав, аллергены и стоимость.</p></div>
+          <div class="stage stage-menu">
+            <div class="student-screen">
+              <div class="student-header"><span class="student-logo">m.</span><div><strong>Меню на сегодня</strong><small>Четверг, 24 сентября</small></div><span class="student-avatar">А</span></div>
+              <div class="student-balance"><div><small>Доступный баланс</small><strong>1 250 ₽</strong></div><span>Кошелёк ↗</span></div>
+              <div class="meal-label">Сегодня в меню</div>
+              <article class="meal-card"><span class="meal-icon">🥣</span><div><small>08:30 · Завтрак</small><h3>Овсяная каша с ягодами</h3><p>Овсяные хлопья, молоко, ягоды</p><span class="allergen">Молоко · злаки</span></div><strong>180 ₽</strong></article>
+              <article class="meal-card"><span class="meal-icon">🍲</span><div><small>13:00 · Обед</small><h3>Суп с курицей и овощами</h3><p>Курица, картофель, морковь</p><span class="allergen">Без аллергенов</span></div><strong>320 ₽</strong></article>
+              <article class="meal-card"><span class="meal-icon">🍎</span><div><small>16:00 · Полдник</small><h3>Фруктовый перекус</h3><p>Яблоко, груша, йогурт</p><span class="allergen">Молоко</span></div><strong>140 ₽</strong></article>
+              <div class="student-nav" aria-hidden="true"><span class="is-active">Меню</span><span>Кошелёк</span><span>Профиль</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="demo-section" id="chef" aria-labelledby="chef-title">
+          <div class="section-heading"><span>02 / 03</span><h2 id="chef-title">Панель повара</h2><p>Выдача блюд, заявки на закупку и контроль остатков.</p></div>
+          <div class="stage stage-dashboard">
+            <div class="dashboard chef-dashboard">
+              <aside class="sidebar"><div class="sidebar-brand">MealHub <small>Повар</small></div><div class="side-link is-active">Обзор</div><div class="side-link">Заявки</div><div class="side-link">Остатки</div></aside>
+              <div class="dashboard-main">
+                <div class="dashboard-header"><div><small>Четверг, 24 сентября</small><h3>Рабочая смена</h3></div><span class="profile">Повар · демо</span></div>
+                <div class="metrics"><div><small>Обедов к выдаче</small><strong>24</strong><span>Сегодня</span></div><div><small>Уже выдано</small><strong>18</strong><span>75% от плана</span></div><div><small>Низкие остатки</small><strong>3</strong><span>Нужна закупка</span></div></div>
+                <div class="dashboard-columns"><div class="panel"><div class="panel-title"><h4>Выдача сегодня</h4><span>Обед</span></div><div class="list-row"><span class="row-dot green"></span><div><strong>Куриный суп</strong><small>18 из 24 выдано</small></div><b>18 / 24</b></div><div class="list-row"><span class="row-dot amber"></span><div><strong>Рис с овощами</strong><small>15 из 22 выдано</small></div><b>15 / 22</b></div><div class="list-row"><span class="row-dot blue"></span><div><strong>Компот</strong><small>20 из 24 выдано</small></div><b>20 / 24</b></div></div><div class="panel"><div class="panel-title"><h4>Остатки</h4><span>3 позиции</span></div><div class="stock-row"><span>Молоко</span><strong>2 л</strong></div><div class="stock-row"><span>Рис</span><strong>1,4 кг</strong></div><div class="stock-row"><span>Яблоки</span><strong>5 шт.</strong></div></div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="demo-section" id="admin" aria-labelledby="admin-title">
+          <div class="section-heading"><span>03 / 03</span><h2 id="admin-title">Панель администратора</h2><p>Заказы, оплаты, меню и отчётность в одном месте.</p></div>
+          <div class="stage stage-dashboard">
+            <div class="dashboard admin-dashboard">
+              <aside class="sidebar"><div class="sidebar-brand">MealHub <small>Администратор</small></div><div class="side-link is-active">Обзор</div><div class="side-link">Статистика</div><div class="side-link">Меню</div><div class="side-link">Заказы</div><div class="side-link">Отчёты</div></aside>
+              <div class="dashboard-main">
+                <div class="dashboard-header"><div><small>Четверг, 24 сентября</small><h3>Обзор системы</h3></div><span class="profile">Администратор · демо</span></div>
+                <div class="metrics"><div><small>Оплаты сегодня</small><strong>12 450 ₽</strong><span>За текущий день</span></div><div><small>Заказы</small><strong>42</strong><span>3 приёма пищи</span></div><div><small>Посещения</small><strong>36</strong><span>Пользователей</span></div></div>
+                <div class="dashboard-columns"><div class="panel chart-panel"><div class="panel-title"><h4>Оплаты за неделю</h4><span>₽</span></div><div class="chart" aria-label="Демо-график оплат"><i style="height:42%"></i><i style="height:58%"></i><i style="height:49%"></i><i style="height:78%"></i><i style="height:68%"></i><i style="height:90%"></i><i style="height:72%"></i></div><div class="chart-labels"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div></div><div class="panel"><div class="panel-title"><h4>Новые заказы</h4><span>Сегодня</span></div><div class="list-row"><span class="row-dot green"></span><div><strong>Обед</strong><small>Куриный суп · рис</small></div><b>320 ₽</b></div><div class="list-row"><span class="row-dot blue"></span><div><strong>Завтрак</strong><small>Овсяная каша</small></div><b>180 ₽</b></div><div class="list-row"><span class="row-dot amber"></span><div><strong>Полдник</strong><small>Фруктовый перекус</small></div><b>140 ₽</b></div></div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer"><span>MealHub · статическое демо</span><a href="../../">Вернуться в портфолио ↗</a></footer>
+    </div>
+  </body>
+</html>

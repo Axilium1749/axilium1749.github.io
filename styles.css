@@ -60,6 +60,7 @@ h1, h2, p { margin: 0; }
 .description { margin-top: 12px; max-width: 570px; font-size: 13px; line-height: 1.7; color: #4f5b53; }
 .stack { margin-top: 16px; font-size: 11px; line-height: 1.6; font-weight: 600; color: #879188; }
 .stack span { padding: 0 5px; color: #aab4ac; }
+.project-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0 18px; }
 .project-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 15px; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 3px; font-size: 12px; font-weight: 700; transition: color .2s; }
 
 .project-media {
