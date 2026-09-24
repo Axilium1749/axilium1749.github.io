@@ -6,7 +6,7 @@ import { spawnSync } from 'node:child_process';
 const chrome = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 const root = path.resolve('.');
 const pages = [
-  'index.html', 'demos/shawarma/index.html', 'demos/attendance/index.html',
+  'index.html', 'demos/forma/index.html', 'demos/shawarma/index.html', 'demos/attendance/index.html',
   'demos/attendance/index.html?preview=attendance',
   'demos/mealhub/index.html', 'demos/mealhub/menu.html',
   'demos/mealhub/chef.html', 'demos/mealhub/admin.html'
@@ -37,7 +37,7 @@ try {
     ].filter(value => /[А-Яа-яЁё]/.test(value));
     if (strings.length) throw new Error(`${page}: untranslated strings: ${[...new Set(strings)].slice(0, 20).join(' | ')}`);
     if (page === 'index.html') {
-      for (const name of ['attendance', 'mealhub', 'shawarma']) {
+      for (const name of ['attendance', 'mealhub', 'forma', 'shawarma']) {
         if (!html.includes(`src="assets/${name}-preview-en.png"`)) {
           throw new Error(`English ${name} preview was not selected`);
         }
@@ -53,7 +53,7 @@ try {
     new URL('file:///' + path.join(root, 'index.html').replaceAll('\\', '/')).href
   ], { encoding: 'utf8', timeout: 15000, maxBuffer: 12 * 1024 * 1024 }).stdout;
   if (!russian.includes('<html lang="ru"') ||
-      !['attendance', 'mealhub', 'shawarma'].every(name => russian.includes(`src="assets/${name}-preview.png"`))) {
+      !['attendance', 'mealhub', 'forma', 'shawarma'].every(name => russian.includes(`src="assets/${name}-preview.png"`))) {
     throw new Error('Russian preview selection failed');
   }
   console.log('OK Russian previews');

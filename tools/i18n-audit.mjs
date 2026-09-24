@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const files = ['index.html', 'demos/shawarma/index.html', 'demos/attendance/index.html', ...['index.html', 'menu.html', 'chef.html', 'admin.html'].map(name => `demos/mealhub/${name}`)];
+const files = ['index.html', 'demos/forma/index.html', 'demos/shawarma/index.html', 'demos/attendance/index.html', ...['index.html', 'menu.html', 'chef.html', 'admin.html'].map(name => `demos/mealhub/${name}`)];
 const map = new Map();
 for (const file of files) {
   const html = fs.readFileSync(file, 'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
