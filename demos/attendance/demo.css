@@ -1,0 +1,12 @@
+/* The original mobile UI stays narrow and centered on wide screens. */
+html, body { width: 100%; height: 100%; }
+body { display: flex; justify-content: center; background: #e9e8e3; }
+.demo-shell { display: flex; flex-direction: column; width: min(100%, 430px); height: 100dvh; overflow: hidden; background: var(--bg); box-shadow: 0 0 0 1px rgba(44,42,38,.08), 0 20px 80px rgba(44,42,38,.12); }
+.demo-bar { z-index: 2; flex: none; min-height: 44px; padding: 9px 15px; display: flex; justify-content: space-between; align-items: center; gap: 10px; background: #2c2a26; color: #f6f3ec; font-size: 11px; font-weight: 700; }
+.demo-bar a { color: inherit; white-space: nowrap; text-underline-offset: 3px; }
+#app { flex: 1; min-height: 0; height: auto; }
+.overlay, .cal-backdrop, .cal-dropdown { position: absolute; }
+.cal-dropdown { max-width: calc(100% - 24px); }
+.child-card__info-btn:focus-visible, .mark-btn:focus-visible, .group-card:focus-visible, .header__back:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 3px; }
+.demo-empty { padding: 24px; text-align: center; color: var(--ink-soft); font-size: 14px; }
+@media (max-width: 430px) { .demo-shell { box-shadow: none; } }

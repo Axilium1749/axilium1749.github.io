@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#FAF9F6" />
+    <meta name="description" content="Демонстрация мобильного интерфейса учёта посещаемости на вымышленных данных." />
+    <title>Посещаемость — демо Axilium</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="demo.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="demo-shell">
+      <div class="demo-bar">
+        <span>Демо · вымышленные данные</span>
+        <a href="../../">Портфолио ↗</a>
+      </div>
+
+      <div id="app">
+        <section id="group-screen" class="screen is-active" aria-label="Выбор группы">
+          <header class="header">
+            <div class="header__greeting">
+              <span class="header__title">Группы</span>
+              <span class="header__sub">Выберите группу для отметки</span>
+            </div>
+          </header>
+          <div class="scroll"><div class="group-grid"></div></div>
+        </section>
+
+        <section id="attendance-screen" class="screen" aria-label="Посещаемость">
+          <header class="header">
+            <button class="header__back" id="back-to-groups" type="button" aria-label="Назад к группам">‹</button>
+            <div class="header__greeting">
+              <span class="header__title" id="group-title">Группа</span>
+              <span class="header__sub">Отметьте посещаемость</span>
+            </div>
+          </header>
+
+          <div class="scroll">
+            <div class="att-controls">
+              <div class="att-controls__row">
+                <div class="date-field">
+                  <button class="date-pill" type="button" id="att-date-trigger" aria-haspopup="dialog" aria-label="Выбрать дату">
+                    <span class="date-pill__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+                    <span class="date-pill__value" id="att-date-label">—</span>
+                    <span class="date-pill__chevron" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                  </button>
+                </div>
+              </div>
+              <div class="att-controls__row">
+                <div class="search">
+                  <span class="search__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+                  <input class="search__input" id="child-search" type="search" placeholder="Поиск по имени…" aria-label="Поиск ребёнка" />
+                </div>
+              </div>
+              <div class="att-summary" aria-live="polite"></div>
+            </div>
+            <div class="children"></div>
+          </div>
+        </section>
+
+        <div class="overlay" id="child-overlay" aria-hidden="true">
+          <div class="overlay__backdrop" data-child-close></div>
+          <div class="overlay__card" role="dialog" aria-modal="true" aria-labelledby="overlay-name">
+            <button class="overlay__close" type="button" data-child-close aria-label="Закрыть">✕</button>
+            <h2 class="overlay__name" id="overlay-name">—</h2>
+            <dl class="overlay__list">
+              <div class="overlay__row"><dt>Дата рождения</dt><dd id="overlay-dob">—</dd></div>
+              <div class="overlay__row"><dt>Контакты</dt><dd>Тестовые данные не показаны</dd></div>
+            </dl>
+            <button class="btn btn--danger btn--block" id="overlay-cancel" type="button">Отменить пометку</button>
+          </div>
+        </div>
+
+        <div class="overlay" id="time-overlay" aria-hidden="true">
+          <div class="overlay__backdrop" data-time-close></div>
+          <div class="overlay__card" role="dialog" aria-modal="true" aria-labelledby="time-title">
+            <button class="overlay__close" type="button" data-time-close aria-label="Закрыть">✕</button>
+            <h2 class="overlay__title" id="time-title">Время ухода</h2>
+            <p class="overlay__sub">Во сколько ребёнок ушёл домой</p>
+            <div class="time-editor">
+              <input class="time-editor__field" id="time-hh" type="text" inputmode="numeric" maxlength="2" placeholder="ЧЧ" aria-label="Часы" autocomplete="off" />
+              <span class="time-editor__sep">:</span>
+              <input class="time-editor__field" id="time-mm" type="text" inputmode="numeric" maxlength="2" placeholder="ММ" aria-label="Минуты" autocomplete="off" />
+            </div>
+            <p class="time-editor__error" id="time-error" role="alert">Введите корректное время</p>
+            <button class="btn btn--primary btn--block" id="time-done" type="button">Готово</button>
+          </div>
+        </div>
+
+        <div class="cal-backdrop" id="cal-backdrop" aria-hidden="true"></div>
+        <div class="cal-dropdown" id="cal-dropdown" role="dialog" aria-modal="false" aria-hidden="true" aria-label="Выбор даты">
+          <div class="cal__head">
+            <button class="cal__nav" type="button" id="cal-prev" aria-label="Предыдущий месяц"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <span class="cal__month" id="cal-month">—</span>
+            <button class="cal__nav" type="button" id="cal-next" aria-label="Следующий месяц"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+          </div>
+          <div class="cal__weekdays" aria-hidden="true"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div>
+          <div class="cal__grid" id="cal-grid"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
